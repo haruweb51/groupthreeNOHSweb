@@ -34,7 +34,7 @@
   build(G.images, G.caption);
 
   // ----- Preview your own photos (this visitor only) -----
-  file.addEventListener("change", () => {
+  if (file) file.addEventListener("change", () => {
     const files = [...file.files].filter(x => x.type.startsWith("image/")); if (!files.length) { cap.textContent = "Please choose image files."; return; }
     urls.forEach(u => URL.revokeObjectURL(u)); urls = files.map(x => URL.createObjectURL(x));
     build(urls, "Preview of " + files.length + (files.length > 1 ? " photos" : " photo") + " from your device");
