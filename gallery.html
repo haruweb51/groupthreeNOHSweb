@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gallery | Negros Occidental High School</title>
+<meta name="description" content="Official information website of Negros Occidental High School, Bacolod City.">
+<link rel="icon" href="assets/images/school-logo.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="gallery">
+<!-- Loading screen (logo comes from js/site-config.js) -->
+<div id="loader" aria-hidden="true"><img class="js-logo" src="assets/images/school-logo.png" alt=""></div>
+<a class="skip" href="#main">Skip to content</a>
+<div id="site-header"></div>
+<main id="main">
+
+<section class="page-head"><div class="container"><h1>Gallery</h1><p>Moments from Negros Occidental High School. Click a photo to enlarge it.</p></div></section>
+<section class="section"><div class="container"><div class="gallery" id="gallery-grid"></div></div></section>
+<!-- Lightbox (opens when a photo is clicked) -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer" hidden>
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-prev" aria-label="Previous photo">&#8249;</button>
+  <figure><img src="" alt=""><figcaption class="lb-cap"></figcaption></figure>
+  <button class="lb-next" aria-label="Next photo">&#8250;</button>
+</div>
+
+</main>
+<div id="site-footer"></div>
+<script src="js/site-config.js"></script>
+<script src="js/data-gallery.js"></script>
+<script src="js/data-members.js"></script>
+<script src="js/data-programs.js"></script>
+<script src="js/data-activities.js"></script>
+<script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

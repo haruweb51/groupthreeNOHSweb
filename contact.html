@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact Us | Negros Occidental High School</title>
+<meta name="description" content="Official information website of Negros Occidental High School, Bacolod City.">
+<link rel="icon" href="assets/images/school-logo.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="contact">
+<!-- Loading screen (logo comes from js/site-config.js) -->
+<div id="loader" aria-hidden="true"><img class="js-logo" src="assets/images/school-logo.png" alt=""></div>
+<a class="skip" href="#main">Skip to content</a>
+<div id="site-header"></div>
+<main id="main">
+
+<section class="page-head"><div class="container"><h1>Contact Us</h1></div></section>
+<section class="section"><div class="container grid grid-2">
+  <div class="card reveal"><h2>School Information</h2>
+    <dl class="info">
+      <dt>School</dt><dd data-cfg="name"></dd>
+      <dt>Address</dt><dd data-cfg="contact.address"></dd>
+      <dt>Phone</dt><dd data-cfg="contact.phone"></dd>
+      <dt>Email</dt><dd data-cfg="contact.email"></dd>
+      <dt>Office hours</dt><dd data-cfg="contact.officeHours"></dd>
+    </dl></div>
+  <div class="card reveal fb-card"><h2>Follow us on Facebook</h2><p>See news and announcements on our official page.</p>
+    <a class="btn btn-fb big js-facebook" href="#"><span class="js-fb-icon"></span><span>Visit our Facebook page</span></a></div>
+</div></section>
+<section class="section alt"><div class="container"><h2 class="section-title">Find Us</h2>
+  <div class="map reveal"><iframe id="map-frame" title="Map showing Negros Occidental High School, Bacolod City" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+  <p class="note">The map needs an internet connection.</p>
+  <a class="btn btn-gold" id="directions" href="#">Get Directions</a></div></section>
+
+</main>
+<div id="site-footer"></div>
+<script src="js/site-config.js"></script>
+<script src="js/data-gallery.js"></script>
+<script src="js/data-members.js"></script>
+<script src="js/data-programs.js"></script>
+<script src="js/data-activities.js"></script>
+<script src="js/main.js"></script>
+<script src="js/maps.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

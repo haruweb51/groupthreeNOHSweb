@@ -1,0 +1,84 @@
+/* ANIMATIONS.CSS - loader, page fade, scroll reveals. */
+#loader{position:fixed;inset:0;z-index:999;background:var(--maroon-dark);display:flex;align-items:center;justify-content:center;transition:opacity .6s,visibility .6s}
+#loader img{width:120px;height:120px;object-fit:contain;animation:pulse 1.4s ease-in-out infinite}
+body.loaded #loader{opacity:0;visibility:hidden}
+@keyframes pulse{0%,100%{transform:scale(1);filter:drop-shadow(0 0 0 rgba(197,162,83,0))}50%{transform:scale(1.1);filter:drop-shadow(0 0 18px rgba(197,162,83,.8))}}
+body{animation:pageIn .5s ease both}
+body.leaving{opacity:0;transition:opacity .25s}
+@keyframes pageIn{from{opacity:0}to{opacity:1}}
+/* Hero: the one orchestrated entrance */
+.hero-text > *{animation:rise .8s cubic-bezier(.2,.7,.2,1) both}
+.hero-text > :nth-child(2){animation-delay:.12s}.hero-text > :nth-child(3){animation-delay:.24s}.hero-text > :nth-child(4){animation-delay:.36s}
+.hero-logo{animation:rise 1s .3s cubic-bezier(.2,.7,.2,1) both}
+@keyframes rise{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal{opacity:1;transform:none}
+  .img-reveal::after{display:none}
+}
+
+/* ===== MORE INTERACTIVE ANIMATIONS ===== */
+/* Scroll progress bar */
+.scroll-progress{position:fixed;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,var(--gold),#ecd495);transform-origin:left;transform:scaleX(0);z-index:500;pointer-events:none}
+/* Section title underline grows in */
+.section-title::after{transform:scaleX(0);transition:transform .9s .25s cubic-bezier(.2,.7,.2,1)}
+.section-title.in::after{transform:scaleX(1)}
+/* Nav hover underline slides in */
+.nav a:not(.active)::after{content:"";position:absolute;left:14px;right:14px;bottom:2px;height:2px;background:var(--gold);transform:scaleX(0);transition:transform .3s}
+.nav a:not(.active):hover::after{transform:scaleX(1)}
+/* Hero: parallax layer, floating logo, shimmering gold button */
+.hero-bg{inset:-70px 0;will-change:transform}
+.hero-logo{animation:rise 1s .3s cubic-bezier(.2,.7,.2,1) both,float 6s 1.4s ease-in-out infinite}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}
+.btn-gold{background-image:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.5) 50%,transparent 70%);background-size:250% 100%;animation:shine 4s ease-in-out infinite}
+.btn-gold:hover{animation:none}
+@keyframes shine{0%,60%{background-position:150% 0}100%{background-position:-50% 0}}
+/* Buttons: ripple + press */
+.btn{position:relative;overflow:hidden}
+.btn:active{transform:translateY(0) scale(.97)}
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.45);transform:scale(0);animation:ripple .65s ease-out;pointer-events:none}
+@keyframes ripple{to{transform:scale(1);opacity:0}}
+/* Cards: tilt glow, image zoom, sliding arrow */
+.card{position:relative}
+.card::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(circle at var(--mx,50%) var(--my,50%),rgba(197,162,83,.22),transparent 55%)}
+.card:hover::after{opacity:1}
+.card.reveal.in{transition:opacity .7s,transform .3s ease,box-shadow .3s}
+.card > img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.card:hover > img{transform:scale(1.07)}
+.card .more::after{display:inline-block;transition:transform .25s}
+.card:hover .more::after{transform:translateX(6px)}
+/* Gallery: caption slides up on hover (always visible on touch screens) */
+.g-item{transition:box-shadow .35s}
+.g-item:hover,.g-item:focus-visible{box-shadow:0 0 0 3px var(--gold),0 16px 30px rgba(74,24,35,.3)}
+@media (hover:hover){.g-cap{transform:translateY(70%);opacity:0;transition:transform .35s,opacity .35s}
+  .g-item:hover .g-cap,.g-item:focus-visible .g-cap{transform:none;opacity:1}}
+/* Lightbox opens with a zoom */
+.lightbox:not([hidden]){animation:pageIn .3s}
+.lightbox:not([hidden]) figure{animation:zoomIn .4s cubic-bezier(.2,.8,.2,1)}
+@keyframes zoomIn{from{opacity:0;transform:scale(.88)}to{opacity:1;transform:none}}
+/* Timeline dots pulse once when they appear */
+.timeline li.in::before{animation:dot 1.6s ease-out 1}
+@keyframes dot{0%{box-shadow:0 0 0 0 rgba(197,162,83,.9)}100%{box-shadow:0 0 0 18px rgba(197,162,83,0)}}
+/* Page banners: soft drifting gold glows */
+.page-head{position:relative;overflow:hidden}
+.page-head .container{position:relative;z-index:1}
+.page-head::before,.page-head::after{content:"";position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(197,162,83,.26),transparent 70%);animation:drift 11s ease-in-out infinite alternate}
+.page-head::before{left:-80px;top:-120px}
+.page-head::after{right:-60px;bottom:-140px;animation-delay:-5s}
+@keyframes drift{from{transform:translate(0,0) scale(1)}to{transform:translate(50px,30px) scale(1.25)}}
+/* Footer + back-to-top polish */
+.site-footer li a{display:inline-block;transition:transform .2s,color .2s}
+.site-footer li a:hover{transform:translateX(5px);color:var(--gold)}
+.to-top.show:hover{transform:translateY(-5px)}
+.brand:active img{transform:scale(.94)}
+
+/* Image reveal: a maroon curtain slides away. The image itself is never clipped or hidden,
+   so every browser loads it and detects it correctly. */
+.img-reveal{position:relative}
+.img-reveal::after{content:"";position:absolute;inset:0;z-index:2;background:var(--maroon-dark);transform-origin:right center;transition:transform 1s cubic-bezier(.7,0,.2,1);pointer-events:none}
+.img-reveal.in::after{transform:scaleX(0)}
+
+/* Hero scroll cue */
+@keyframes cue{0%,100%{transform:translate(-50%,0) rotate(45deg);opacity:.5}50%{transform:translate(-50%,10px) rotate(45deg);opacity:1}}

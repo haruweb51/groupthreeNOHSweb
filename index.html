@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Home | Negros Occidental High School</title>
+<meta name="description" content="Official information website of Negros Occidental High School, Bacolod City.">
+<link rel="icon" href="assets/images/school-logo.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="home">
+<!-- Loading screen (logo comes from js/site-config.js) -->
+<div id="loader" aria-hidden="true"><img class="js-logo" src="assets/images/school-logo.png" alt=""></div>
+<a class="skip" href="#main">Skip to content</a>
+<div id="site-header"></div>
+<main id="main">
+
+<!-- A. HERO. Background picture: assets/images/school-banner.jpg -->
+<section class="hero"><div class="container hero-grid">
+  <div class="hero-text">
+    <h1>NEGROS OCCIDENTAL HIGH SCHOOL</h1>
+    <p class="hero-meta"><span data-cfg="location"></span> &nbsp;|&nbsp; Established <span data-cfg="established"></span></p>
+    <p class="hero-welcome" data-cfg="tagline"></p>
+    <div class="btn-row"><a class="btn btn-gold" href="#school-highlights">Explore Our School</a><a class="btn btn-light" href="about.html">Learn More</a></div>
+  </div>
+  <img class="hero-logo js-logo" src="assets/images/school-logo.png" alt="Negros Occidental High School official logo" width="260" height="260">
+</div></section>
+
+<!-- B. WELCOME / ABOUT PREVIEW. Text comes from about.introduction in js/site-config.js -->
+<section class="section"><div class="container split">
+  <div class="reveal"><h2 class="section-title">Welcome to NOHS</h2><p data-cfg="about.introduction"></p><a class="btn" href="about.html">Read More</a></div>
+  <div class="img-frame img-reveal"><img class="js-intro-img" src="assets/images/school-intro.jpg" alt="Photograph of the school campus (placeholder)" width="900" height="675"></div>
+</div></section>
+
+<!-- C. HIGHLIGHTS. Edit the "highlights" list in js/site-config.js -->
+<section class="section alt" id="school-highlights"><div class="container"><h2 class="section-title">School Highlights</h2>
+  <div class="grid grid-4" id="highlights"></div></div></section>
+
+<!-- D. FEATURED VIDEO. Default video path: video.src in js/site-config.js -->
+<section class="section"><div class="container"><h2 class="section-title">Featured Video</h2>
+  <div class="player-wrap">
+    <div class="player" id="player">
+      <video preload="metadata" playsinline aria-label="Featured school video"></video>
+      <p id="vmsg" class="vmsg" role="status" hidden></p>
+      <div class="controls">
+        <button type="button" id="pp">Play</button>
+        <input type="range" id="seek" min="0" max="100" step="0.1" value="0" aria-label="Video progress">
+        <span id="time" aria-live="off">0:00 / 0:00</span>
+        <button type="button" id="mute">Mute</button>
+        <input type="range" id="vol" min="0" max="1" step="0.05" value="1" aria-label="Volume">
+        <button type="button" id="fs">Fullscreen</button>
+      </div>
+    </div>
+    <div class="player-info">
+      <h3 id="vtitle"></h3><p id="vdesc"></p>
+      <label class="btn btn-gold" for="vfile" tabindex="0" onkeydown="if(event.key==='Enter')this.click()">Upload a video</label>
+      <input type="file" id="vfile" accept="video/*" class="sr">
+      <p class="note">Choose MP4, WebM, OGG or another video from your device. It plays only on your screen and is not saved to the website. Whether it plays depends on your browser's codec support.</p>
+    </div>
+  </div></div></section>
+
+<!-- E. QUICK NAVIGATION -->
+<section class="section alt"><div class="container"><h2 class="section-title">Quick Navigation</h2><div class="grid grid-4" id="quicknav"></div></div></section>
+
+</main>
+<div id="site-footer"></div>
+<script src="js/site-config.js"></script>
+<script src="js/data-gallery.js"></script>
+<script src="js/data-members.js"></script>
+<script src="js/data-programs.js"></script>
+<script src="js/data-activities.js"></script>
+<script src="js/main.js"></script>
+<script src="js/video-player.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* RESPONSIVE.CSS - tablet and phone layouts. */
+@media (max-width:1000px){
+  .grid-4{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(2,1fr)}
+  .grid-5 .card{flex-basis:calc(50% - 12px)}
+  .player-wrap,.split{grid-template-columns:1fr}
+  .gallery{grid-template-columns:repeat(2,1fr)}
+  .hero-logo{width:200px;height:200px}
+}
+@media (max-width:860px){
+  .nav-toggle{display:block}
+  .nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--maroon-dark);padding:8px 4%;gap:0;max-height:0;overflow:hidden;visibility:hidden;transition:max-height .35s,visibility .35s}
+  .nav.open{max-height:420px;visibility:visible;border-bottom:3px solid var(--gold)}
+  .nav a{padding:14px 10px}
+  .nav a.active::after{left:10px;right:auto;width:36px}
+  .footer-grid{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .section{padding:54px 0}
+  .grid-2,.grid-3,.grid-4{grid-template-columns:1fr}
+  .grid-5 .card{flex-basis:100%}
+  .hero{padding:64px 0 72px}
+  .hero-grid{grid-template-columns:1fr}.hero-logo{order:-1;width:130px;height:130px}
+  .gallery{grid-template-columns:1fr}
+  .brand img{width:44px;height:44px}.brand-name{font-size:1rem}.brand-sub{font-size:.68rem}.brand-text{padding-left:10px}.nav-wrap{min-height:72px}
+  .map iframe{height:320px}
+  .lightbox{padding:10px;gap:4px}.lightbox button{width:40px;height:40px}
+  .lightbox figure{max-width:78vw}
+}
+
+/* Symmetry layer: tablet and phone */
+@media (max-width:1000px){.split > div:first-child{text-align:center}}
+@media (max-width:860px){.footer-grid{grid-template-columns:1fr}}
+@media (max-width:700px){
+  .photos{grid-template-columns:1fr}
+  .timeline::before{left:8px;transform:none}
+  .timeline li,.timeline li:nth-child(even){width:100%;margin-left:0;padding:0 0 28px 40px;text-align:left}
+  .timeline li::before,.timeline li:nth-child(even)::before{left:0;right:auto}
+}
+@media (max-width:640px){.hero-logo{width:130px;height:130px}}
+
+/* Banner on smaller screens */
+@media (max-width:900px){.hero-logo{width:130px;height:130px}.hero-grid{gap:28px}}
+@media (max-width:760px){
+  .hero{aspect-ratio:auto;min-height:0;padding:56px 0 60px}
+  .hero::before,.hero-small::before{background:linear-gradient(rgba(74,24,35,.78),rgba(48,43,41,.72))}
+  .hero-grid{grid-template-columns:1fr;justify-items:center;text-align:center;gap:22px}
+  .hero-logo{order:-1;width:120px;height:120px}
+  .btn-row{justify-content:center}
+  .hero h1{font-size:clamp(1.7rem,7vw,2.4rem)}
+  .hero-welcome{margin-inline:auto}
+}

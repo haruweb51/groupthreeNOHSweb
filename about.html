@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About | Negros Occidental High School</title>
+<meta name="description" content="Official information website of Negros Occidental High School, Bacolod City.">
+<link rel="icon" href="assets/images/school-logo.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="about">
+<!-- Loading screen (logo comes from js/site-config.js) -->
+<div id="loader" aria-hidden="true"><img class="js-logo" src="assets/images/school-logo.png" alt=""></div>
+<a class="skip" href="#main">Skip to content</a>
+<div id="site-header"></div>
+<main id="main">
+
+<section class="page-head"><div class="container"><h1>About Us</h1><p>Negros Occidental High School &middot; Established <span data-cfg="established"></span></p></div></section>
+<section class="section"><div class="container"><a class="btn btn-outline" href="index.html">&larr; Back to Home</a></div></section>
+<section class="section tight"><div class="container">
+  <div class="narrow reveal"><h2 class="section-title">School History</h2><p data-cfg="about.history"></p>
+    <h3>School Background</h3><p data-cfg="about.background"></p></div>
+  <div class="photos" id="history-photos"></div>
+</div></section>
+<section class="section alt"><div class="container"><h2 class="section-title">Our Journey</h2><ol class="timeline" id="timeline"></ol></div></section>
+<section class="section"><div class="container grid grid-2">
+  <div class="card reveal"><h2>Vision</h2><p data-cfg="about.vision"></p></div>
+  <div class="card reveal"><h2>Mission</h2><p data-cfg="about.mission"></p></div>
+</div></section>
+<section class="section alt"><div class="container grid grid-2">
+  <div class="reveal"><h2 class="section-title">Goals</h2><ul class="ticks" id="goals"></ul></div>
+  <div class="reveal"><h2 class="section-title">Core Values</h2><ul class="ticks" id="values"></ul></div>
+</div></section>
+<section class="section"><div class="container"><h2 class="section-title">School Profile</h2>
+  <table class="profile reveal"><tbody id="profile"></tbody></table></div></section>
+
+</main>
+<div id="site-footer"></div>
+<script src="js/site-config.js"></script>
+<script src="js/data-gallery.js"></script>
+<script src="js/data-members.js"></script>
+<script src="js/data-programs.js"></script>
+<script src="js/data-activities.js"></script>
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

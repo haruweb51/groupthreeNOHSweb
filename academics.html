@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Academics | Negros Occidental High School</title>
+<meta name="description" content="Official information website of Negros Occidental High School, Bacolod City.">
+<link rel="icon" href="assets/images/school-logo.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="academics">
+<!-- Loading screen (logo comes from js/site-config.js) -->
+<div id="loader" aria-hidden="true"><img class="js-logo" src="assets/images/school-logo.png" alt=""></div>
+<a class="skip" href="#main">Skip to content</a>
+<div id="site-header"></div>
+<main id="main">
+
+<section class="page-head"><div class="container"><h1>Academics</h1></div></section>
+<section class="section"><div class="container narrow reveal"><h2 class="section-title">Academic Overview</h2><p data-cfg="academics.overview"></p></div></section>
+<section class="section alt"><div class="container"><h2 class="section-title">Academic Programs</h2><div class="grid-5 programs" id="programs"></div></div></section>
+<section class="section"><div class="container"><h2 class="section-title">Learning Environment</h2><div class="grid grid-3" id="learning"></div></div></section>
+<section class="section alt" id="development"><div class="container"><h2 class="section-title">Student Development</h2><div class="grid grid-4" id="activities"></div></div></section>
+
+<!-- Academic Programs photo viewer (opens when a program image is clicked) -->
+<div class="lightbox" id="program-lightbox" role="dialog" aria-modal="true" aria-label="Academic program photos" hidden>
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-prev" aria-label="Previous program">&#8249;</button>
+  <figure><img src="" alt=""><figcaption class="lb-cap"></figcaption></figure>
+  <button class="lb-next" aria-label="Next program">&#8250;</button>
+</div>
+
+<!-- Learning Environment photo viewer (opens when a card is clicked) -->
+<div class="lightbox" id="learn-lightbox" role="dialog" aria-modal="true" aria-label="Learning environment photos" hidden>
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-prev" aria-label="Previous photo">&#8249;</button>
+  <figure><img src="" alt=""><figcaption class="lb-cap"></figcaption><div class="lb-thumbs"></div></figure>
+  <button class="lb-next" aria-label="Next photo">&#8250;</button>
+</div>
+</main>
+<div id="site-footer"></div>
+<script src="js/site-config.js"></script>
+<script src="js/data-gallery.js"></script>
+<script src="js/data-members.js"></script>
+<script src="js/data-programs.js"></script>
+<script src="js/data-activities.js"></script>
+<script src="js/main.js"></script>
+<script src="js/learning-gallery.js"></script>
+<script src="js/program-lightbox.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

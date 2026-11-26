@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Website Members | Negros Occidental High School</title>
+<meta name="description" content="Official information website of Negros Occidental High School, Bacolod City.">
+<link rel="icon" href="assets/images/school-logo.png">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animations.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="members">
+<!-- Loading screen (logo comes from js/site-config.js) -->
+<div id="loader" aria-hidden="true"><img class="js-logo" src="assets/images/school-logo.png" alt=""></div>
+<a class="skip" href="#main">Skip to content</a>
+<div id="site-header"></div>
+<main id="main">
+
+<section class="page-head"><div class="container"><h1>MEET THE PEOPLE BEHIND THIS WEBSITE</h1><p>The five members who created the Negros Occidental High School website.</p></div></section>
+<section class="section"><div class="container"><div class="grid grid-5" id="members-grid"></div></div></section>
+
+<section class="section alt"><div class="container"><h2 class="section-title">Our Team</h2>
+  <!-- GROUP PHOTO: any image type works (jpg, png, webp, gif, avif, svg). Change the path in js/data-members.js -->
+  <figure class="group reveal">
+    <div class="group-frame" id="group-frame"><!-- photos are added by js/group-photo.js --></div>
+    <figcaption id="group-cap"></figcaption>
+  </figure>
+  <div class="group-actions">
+    <label class="btn btn-outline" for="group-file" tabindex="0" onkeydown="if(event.key==='Enter')this.click()">Preview your own photos</label>
+    <input type="file" id="group-file" accept="image/*" multiple class="sr">
+    <p class="note">Select one or more photos from your device. This only changes what you see on your screen. To change it for everyone, replace the group photo files or edit js/data-members.js.</p>
+  </div>
+</div></section>
+<!-- Group photo lightbox (opens when the group photo is clicked) -->
+<div class="lightbox" id="group-lightbox" role="dialog" aria-modal="true" aria-label="Group photo viewer" hidden>
+  <button class="lb-close" aria-label="Close">&times;</button>
+  <button class="lb-prev" aria-label="Previous photo">&#8249;</button>
+  <figure><img src="" alt=""><figcaption class="lb-cap"></figcaption><div class="lb-thumbs"></div></figure>
+  <button class="lb-next" aria-label="Next photo">&#8250;</button>
+</div>
+</main>
+<div id="site-footer"></div>
+<script src="js/site-config.js"></script>
+<script src="js/data-gallery.js"></script>
+<script src="js/data-members.js"></script>
+<script src="js/data-programs.js"></script>
+<script src="js/data-activities.js"></script>
+<script src="js/main.js"></script>
+<script src="js/group-photo.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>
