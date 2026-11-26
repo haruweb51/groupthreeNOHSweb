@@ -77,7 +77,7 @@ footerDescription: "Tatakprobinysa! Culture of Excellence",
        Replace the files in assets/images/learning/ (same names) or change the paths.
        The first photo is the card's cover picture. */
     learning: [
-      { title: "Classrooms", text: "NOHS classrooms",
+      { title: "Classrooms", text: "The School classrooms",
         images: ["assets/images/learning/classrooms-01.jpg", "assets/images/learning/classrooms-02.jpg", "assets/images/learning/classrooms-03.jpg"] },
       { title: "School Facilities", text: "The School facilities",
         images: ["assets/images/learning/facilities-01.jpg", "assets/images/learning/facilities-02.jpg", "assets/images/learning/facilities-03.jpg"] },
