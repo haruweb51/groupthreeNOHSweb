@@ -1,5 +1,5 @@
 /* VIDEO-PLAYER.JS - custom HTML5 player. Default video: SCHOOL_CONFIG.video.src
-   Visitors can also pick a file from their device (plays only on their own screen). */
+   Add your video by putting it in assets/videos/ (see video.src in js/site-config.js). */
 (function () {
   const p = document.getElementById("player"); if (!p) return;
   const v = p.querySelector("video"), $ = s => p.querySelector(s), V = SCHOOL_CONFIG.video;
@@ -19,7 +19,7 @@
   vol.oninput = () => { v.volume = vol.value; v.muted = v.volume === 0; mute.textContent = v.muted ? "Unmute" : "Mute"; };
   mute.onclick = () => { v.muted = !v.muted; mute.textContent = v.muted ? "Unmute" : "Mute"; };
   fs.onclick = () => (document.fullscreenElement ? document.exitFullscreen() : (p.requestFullscreen || p.webkitRequestFullscreen).call(p));
-  file.onchange = () => {
+  if (file) file.onchange = () => {
     const f = file.files[0]; if (!f) return;
     if (url) URL.revokeObjectURL(url);
     url = URL.createObjectURL(f); load(url, f.name, "Playing a video from your device."); v.play().catch(() => {});
